@@ -1,7 +1,7 @@
 <resources>
-  <string name="app_name">CatAudio</string>
-  <string name="activity_main_title_label">Cat Audio</string>
-  <string name="activity_main_start_button">Start</string>
+  <string name="app_name">Cat Audio</string>
+  <string name="activity_main_title_label">Record Cat Sounds</string>
+  <string name="activity_main_start_button">Start Audio Capture</string>
   <string name="activity_main_pause_button">Pause</string>
   <string name="activity_main_stop_button">Stop</string>
 </resources>

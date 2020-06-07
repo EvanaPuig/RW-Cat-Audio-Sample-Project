@@ -11,7 +11,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/activity_main_title_label"
-      android:textColor="@color/colorPrimaryDark"
+      android:textColor="@color/colorPrimary"
       android:textSize="@dimen/title_text_size"
       android:textStyle="bold"
       android:layout_marginTop="@dimen/margin_screen_top"
@@ -28,5 +28,15 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/textview_sound_recorder_heading" />
+
+  <ImageView
+      android:id="@+id/image_view_cat"
+      android:layout_width="wrap_content"
+      android:layout_height="300dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/button_start_recording"
+      app:srcCompat="@drawable/creature_cat_notification" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
