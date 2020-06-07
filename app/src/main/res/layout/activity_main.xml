@@ -4,39 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.raywenderlich.android.cat_audio.ui.MainActivity">
 
-  <TextView
-      android:id="@+id/textview_sound_recorder_heading"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/activity_main_title_label"
-      android:textColor="@color/colorPrimary"
-      android:textSize="@dimen/title_text_size"
-      android:textStyle="bold"
-      android:layout_marginTop="@dimen/margin_screen_top"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+  <fragment
+    android:id="@+id/nav_host_fragment"
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:defaultNavHost="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:navGraph="@navigation/nav_graph"/>
 
-  <Button
-      android:id="@+id/button_start_recording"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="@string/activity_main_start_button"
-      android:layout_marginTop="@dimen/margin_buttons"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textview_sound_recorder_heading" />
-
-  <ImageView
-      android:id="@+id/image_view_cat"
-      android:layout_width="wrap_content"
-      android:layout_height="300dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/button_start_recording"
-      app:srcCompat="@drawable/creature_cat_notification" />
-
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/nav_view"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="0dp"
+    android:layout_marginEnd="0dp"
+    android:background="?android:attr/windowBackground"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:menu="@menu/bottom_nav_menu"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>
