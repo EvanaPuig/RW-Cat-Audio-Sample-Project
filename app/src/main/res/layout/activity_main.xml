@@ -7,12 +7,46 @@
     tools:context=".MainActivity">
 
   <TextView
+      android:id="@+id/textview_sound_recorder_heading"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
+      android:text="@string/activity_main_title_label"
+      android:textColor="@color/colorPrimaryDark"
+      android:textSize="@dimen/title_text_size"
+      android:textStyle="bold"
+      android:layout_marginTop="@dimen/margin_screen_top"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/button_start_recording"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/activity_main_start_button"
+      android:layout_marginTop="@dimen/margin_buttons"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textview_sound_recorder_heading" />
+
+  <Button
+      android:id="@+id/button_pause_recording"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/activity_main_pause_button"
+      android:layout_marginTop="@dimen/margin_buttons"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/button_start_recording" />
+
+  <Button
+      android:id="@+id/button_stop_recording"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/activity_main_stop_button"
+      android:layout_marginTop="@dimen/margin_buttons"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/button_pause_recording" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
