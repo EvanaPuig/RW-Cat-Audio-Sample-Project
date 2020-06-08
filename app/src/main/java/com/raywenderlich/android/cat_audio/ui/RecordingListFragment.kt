@@ -35,21 +35,26 @@
 package com.raywenderlich.android.cat_audio.ui
 
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.raywenderlich.android.cat_audio.adapter.MyItemRecyclerViewAdapter
 import com.raywenderlich.android.cataudio.R
-import com.raywenderlich.android.cat_audio.dummy.DummyContent
+import java.io.File
+import java.util.ArrayList
+
 
 /**
  * A fragment representing a list of Items.
  */
 class RecordingListFragment : Fragment() {
+
+  var items: MutableList<File> = ArrayList()
 
   private var columnCount = 1
 
@@ -72,11 +77,21 @@ class RecordingListFragment : Fragment() {
           columnCount <= 1 -> LinearLayoutManager(context)
           else -> GridLayoutManager(context, columnCount)
         }
-        adapter = MyItemRecyclerViewAdapter(
-            DummyContent.ITEMS)
+        createItems()
+        adapter = MyItemRecyclerViewAdapter(items)
       }
     }
     return view
+  }
+
+  fun createItems() {
+    val f = File(context?.getExternalFilesDir(null), "/AudioCaptures")
+    val file: Array<File> = f.listFiles()!!
+    Log.d("Files", "Size: " + file.size)
+    for (i in file.indices) {
+      Log.d("Files", "FileName:" + file[i].name)
+      items.add(file[i])
+    }
   }
 
   companion object {

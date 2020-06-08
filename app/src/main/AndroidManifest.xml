@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+  <!-- TODO: Add permissions here -->
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
   <application
       android:allowBackup="false"
       android:icon="@mipmap/ic_launcher"
@@ -21,6 +27,13 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+
+    <service
+      android:name="com.raywenderlich.android.cat_audio.service.MediaCaptureService"
+      android:enabled="true"
+      android:exported="false"
+      android:foregroundServiceType="mediaProjection"
+      tools:targetApi="q" />
 
   </application>
 

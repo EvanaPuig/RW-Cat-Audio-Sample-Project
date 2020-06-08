@@ -41,14 +41,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.raywenderlich.android.cataudio.R
 
-import com.raywenderlich.android.cat_audio.dummy.DummyContent.DummyItem
+import java.io.File
 
-/**
- * [RecyclerView.Adapter] that can display a [DummyItem].
- * TODO: Replace the implementation with code for your data type.
- */
-class MyItemRecyclerViewAdapter(
-    private val values: List<DummyItem>)
+class MyItemRecyclerViewAdapter(private val values: List<File>)
   : RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -58,8 +53,8 @@ class MyItemRecyclerViewAdapter(
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     val item = values[position]
-    holder.idView.text = item.id
-    holder.contentView.text = item.content
+    holder.idView.text = (position + 1).toString()
+    holder.contentView.text = item.name
   }
 
   override fun getItemCount(): Int = values.size
